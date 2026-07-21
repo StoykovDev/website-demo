@@ -1,213 +1,421 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Професионални сондажни машини за всяка ваша нужда!">
-    <title>SondiBG Сондажни Машини , компресори и консумативи.</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Професионални сондажни машини за всяка ваша нужда! Над 21 години опит в бранша.">
+    <title>SondiBG | Сондажни Машини, Компресори и Консумативи</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">
-            <a class="logo" href="./">Сондажни Машини SondiBG</a>
-            </h1>
-            <div class="phone-container">
-            <img class="phone-img" src="images/phone.png" style="width: 40px; height: 40px;" alt="Phone icon">
-            <h1 class="phone-text">0888 5239 15</h1>
-            </div>
-            
-<nav>
-  <ul class="nav-links">
-    <!-- Машини with dropdown -->
-      <li class="has-dropdown">
-      <a href="#menu" aria-haspopup="true">☰ Меню</a>
-      <ul class="dropdown">
-        <li><a href="./#about">За нас</a></li>
-        <li><a href="./#contact">Контакт</a></li>
-        <li><a href="./#project-gallery">Галерия</a></li> 
-      </ul>
-    </li>
-    <li class="has-dropdown">
-      <a href="#more" aria-haspopup="true">▼ Машини</a>
-      <ul class="dropdown">
-        <li><a href="./hy180">HY-180</a></li>
-        <li><a href="./hy280">HY-280</a></li>
-        <li><a href="./profesional">Професионал+</a></li>
-        <li><a href="./hw60">HW-60 Компресор</a></li>
-      </ul>
-    </li>
-        <li class="has-dropdown">
-      <a href="#more" aria-haspopup="true">▼ Консумативи</a>
-      <ul class="dropdown">
-        <li><a href="./glavi">Глави</a></li>
-        <li><a href="./trabi">Тръби</a></li>
-        <li><a href="./pompi">Помпи</a></li>
-      </ul>
-    </li>
-</nav>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span class="top-bar-text">🔧 Над 21 години опит в сондажния бизнес</span>
+            <a href="tel:+359888523915" class="top-bar-phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                0888 5239 15
+            </a>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="./" class="logo">
+                <span class="logo-icon">⛏️</span>
+                <span class="logo-text">Sondi<span class="logo-accent">BG</span></span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="./" class="nav-link">Начало</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#machines" class="nav-link">Машини <span class="arrow">▾</span></a>
+                        <ul class="dropdown">
+                            <li><a href="./hy180">HY-180</a></li>
+                            <li><a href="./hy280">HY-280</a></li>
+                            <li><a href="./profesional">Професионал+</a></li>
+                            <li><a href="./hw60">HW-60 Компресор</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#consumables" class="nav-link">Консумативи <span class="arrow">▾</span></a>
+                        <ul class="dropdown">
+                            <li><a href="./glavi">Глави</a></li>
+                            <li><a href="./trabi">Тръби</a></li>
+                            <li><a href="./pompi">Помпи</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#about" class="nav-link">За нас</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Галерия</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Контакт</a></li>
+                </ul>
+            </nav>
+
+            <a href="tel:+359888523915" class="header-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                Обади се
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <div class="container">
-                <h2>Висококачествени Сондажни Машини</h2>
-                <p>В бизнеса 21 години , професионално отношение , несравнимо качество!</p>
-                <a href="#more" class="btn-primary">Каталог</a>
-            </div>
-        </section>
-        <section id="services" class="services scroll-reveal">
-            <div class="card">
-                <img src="images/hy-180g.JPG" style="width:200px; height:200px">
-                <h3>HY-180G</h3>
-                <p>Нашата най-продавана машина до сега.<br>Перфектно съотношение цена-качество!<br> Пробивай до макс 200м. с диаметър до 400мм. , а нейният едноцилиндров двигател достига до 1500nm.</p>
-                <a href="./hy180" class="btn">Виж повече!</a>
-  </div>
-            <div class="container">
-                <h3 class="services1">Нашите услуги:</h3>
-                <ul class="service-list">
-                    <li>Внос на поръчкова сондажна машина</li>
-                    <li>Каталог с налични машини</li>
-                    <li>Най-ниска цена , най високо качество и оборудване!</li>
-                    <li>Внос на едри и дребни стоки</li>
-                    <li>За налични машини и ценоразпис натисни <a href="list">ТУК!</a></li>
-                </ul>
-        </section>
-        <br>
-        <br>
-        <br>
-    <section id="more" class="section">
-    <h1>Машини за сондиране</h1>
-    <div class="cards">
-      
-      <div class="card">
-        <img src="images/hy-180g.JPG" alt="Сондажни машини на ремарке">
-        <div class="card-content">
-          <h2>Сондажни машина HY-180<br> 12 270 € / 23 999 лв.</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./hy180">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <img src="images/HY-280.JPG" alt="Сондажни машини на камион">
-        <div class="card-content">
-          <h2>Сондажна машина HY-280 <br>21 474 € / 41 999 лв.</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./hy280">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <img src="images/professional.JPG" alt="Верижни сондажни машини">
-        <div class="card-content">
-          <h2>Сондажна машина  <br>39 880 € / 77 999 лв.</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./profesional">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-  <section class="section" >
-    <h1>Консумативи</h1>
-    <div class="cards">
-      
-      <div class="card">
-        <img src="images/glava1.JPG" alt="глава">
-        <div class="card-content">
-          <h2>Сондажни глави</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./glavi">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <img src="images/trabi.JPG" alt="trabi">
-        <div class="card-content">
-          <h2>Сондажни тръби</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./trabi">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <img src="images/pompa.JPG" alt="pompa">
-        <div class="card-content">
-          <h2>Помпи за мръсна вода</h2>
-        </div>
-        <div class="card-footer">
-          <a href="./pompi">Виж повече &rsaquo;</a>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-        <section id="about" class="about scroll-reveal">
-            <div class="container">
-                <h3 class="aboutus">Кои сме ние?</h3>
-                <p>Тони Транс 2004“ ООД е утвърдена транспортно-логистична компания с над 21 години опит в сферата на вноса и международния и вътрешния транспорт.
-                   <br><br>От основаването си до днес ние развиваме дейността си с ясна визия, професионализъм
-                   и стремеж към постоянно усъвършенстване и растеж на фирмата.<br><br>Нашата мисия е да предоставяме надеждни, ефективни и конкурентни решения, като винаги 
-                   се стремим да бъдем една стъпка пред пазара и конкуренцията с най-конкурентните цени.<br>Работим с внимание към детайла и индивидуален подход към всеки клиент.
-                   След сключване на сделка клиентите ни могат да разчитат на коректно и отговорно обслужване, както и на пълно съдействие при възникване на казуси или 
-                   непредвидени ситуации.<br><br>Доверието, дългосрочните партньорства и високото качество на услугите са основни принципи в нашата работа.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <p>Снимки с част от нашите клиенти!</p>
-                <div class="project-gallery">
-                    <img src="images/drill1.jpeg" alt="Water well drilling rig in action"style="width:300px; height:300px";>
-                    <img src="images/drill2.jpeg" alt="Completed water well installation"style="width:300px; height:300px";>
-                    <img src="images/drill3.jpeg" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill4.jpeg" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill5.jpeg" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill6.jpeg" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill7.jpeg" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill9.JPG" alt="Drilling setup on-site"style="width:300px; height:300px";>
-                    <img src="images/drill10.JPG" alt="Drilling setup on-site"style="width:300px; height:300px";>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-badge">✓ 21 години в бизнеса</span>
+                <h1 class="hero-title">Висококачествени<br><span class="highlight">Сондажни Машини</span></h1>
+                <p class="hero-subtitle">Професионално отношение, несравнимо качество и най-конкурентните цени на пазара. Вашето доверие е нашата мисия.</p>
+                <div class="hero-actions">
+                    <a href="#machines" class="btn btn-primary">Разгледай каталога</a>
+                    <a href="#contact" class="btn btn-outline">Свържи се с нас</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">21+</span>
+                        <span class="stat-label">Години опит</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Доволни клиенти</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">200м</span>
+                        <span class="stat-label">Макс. дълбочина</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- Services / Features -->
+        <section class="features" id="services">
             <div class="container">
-                <h3 class="call">За връзка с нас:<br>0888 5239 15 <br>или<br> +359 888 5239 15</h3>
+                <div class="section-header">
+                    <span class="section-tag">Какво предлагаме</span>
+                    <h2 class="section-title">Нашите услуги</h2>
+                    <p class="section-desc">Пълно обслужване от консултация до доставка и поддръжка</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚛</div>
+                        <h3>Внос по поръчка</h3>
+                        <p>Внос на поръчкова сондажна машина, съобразена с вашите нужди и бюджет.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Каталог с налични машини</h3>
+                        <p>Разгледайте нашите налични машини и изберете перфектната за вас.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Най-ниска цена</h3>
+                        <p>Най-високо качество и оборудване на най-конкурентните цени в България.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Внос на стоки</h3>
+                        <p>Внос на едри и дребни стоки, консумативи и резервни части.</p>
+                    </div>
+                </div>
+                <div class="features-cta">
+                    <a href="list" class="btn btn-primary">Виж ценоразпис →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machines Section -->
+        <section class="machines" id="machines">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Продукти</span>
+                    <h2 class="section-title">Машини за сондиране</h2>
+                    <p class="section-desc">Професионални решения за всеки проект</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="product-card">
+                        <div class="product-badge">Най-продавана</div>
+                        <div class="product-image">
+                            <img src="images/hy-180g.JPG" alt="Сондажна машина HY-180">
+                        </div>
+                        <div class="product-info">
+                            <h3>HY-180G</h3>
+                            <p class="product-desc">Перфектно съотношение цена-качество. Пробивай до 200м с диаметър до 400мм.</p>
+                            <div class="product-price">
+                                <span class="price-main">12 270 €</span>
+                                <span class="price-local">/ 23 999 лв.</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./hy180" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/HY-280.JPG" alt="Сондажна машина HY-280">
+                        </div>
+                        <div class="product-info">
+                            <h3>HY-280</h3>
+                            <p class="product-desc">Мощна и надеждна машина за професионални сондажни проекти.</p>
+                            <div class="product-price">
+                                <span class="price-main">21 474 €</span>
+                                <span class="price-local">/ 41 999 лв.</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./hy280" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge premium">Премиум</div>
+                        <div class="product-image">
+                            <img src="images/professional.JPG" alt="Професионална сондажна машина">
+                        </div>
+                        <div class="product-info">
+                            <h3>Професионал+</h3>
+                            <p class="product-desc">Верижна сондажна машина за най-взискателните проекти.</p>
+                            <div class="product-price">
+                                <span class="price-main">39 880 €</span>
+                                <span class="price-local">/ 77 999 лв.</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./profesional" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consumables Section -->
+        <section class="consumables" id="consumables">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Аксесоари</span>
+                    <h2 class="section-title">Консумативи</h2>
+                    <p class="section-desc">Всичко необходимо за вашата сондажна машина</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/glava1.JPG" alt="Сондажни глави">
+                        </div>
+                        <div class="product-info">
+                            <h3>Сондажни глави</h3>
+                            <p class="product-desc">Широка гама глави за различни типове почви и скали.</p>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./glavi" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/trabi.JPG" alt="Сондажни тръби">
+                        </div>
+                        <div class="product-info">
+                            <h3>Сондажни тръби</h3>
+                            <p class="product-desc">Здрави и издръжливи тръби за всякакви дълбочини.</p>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./trabi" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/pompa.JPG" alt="Помпи за мръсна вода">
+                        </div>
+                        <div class="product-info">
+                            <h3>Помпи за мръсна вода</h3>
+                            <p class="product-desc">Надеждни помпи за ефективно отводняване.</p>
+                        </div>
+                        <div class="product-footer">
+                            <a href="./pompi" class="btn btn-card">Виж повече →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="section-tag">За нас</span>
+                        <h2 class="section-title">Кои сме ние?</h2>
+                        <p>„Тони Транс 2004" ООД е утвърдена транспортно-логистична компания с над 21 години опит в сферата на вноса и международния и вътрешния транспорт.</p>
+                        <p>От основаването си до днес ние развиваме дейността си с ясна визия, професионализъм и стремеж към постоянно усъвършенстване и растеж на фирмата.</p>
+                        <p>Нашата мисия е да предоставяме надеждни, ефективни и конкурентни решения, като винаги се стремим да бъдем една стъпка пред пазара и конкуренцията с най-конкурентните цени.</p>
+                        <p>Работим с внимание към детайла и индивидуален подход към всеки клиент. След сключване на сделка клиентите ни могат да разчитат на коректно и отговорно обслужване.</p>
+                        <div class="about-values">
+                            <div class="value-item">
+                                <span class="value-icon">🤝</span>
+                                <span>Доверие и партньорства</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-icon">⭐</span>
+                                <span>Високо качество</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-icon">🎯</span>
+                                <span>Индивидуален подход</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/hy-180g.JPG" alt="SondiBG сондажна машина">
+                        <div class="about-image-badge">
+                            <span class="badge-number">21+</span>
+                            <span class="badge-text">години опит</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Портфолио</span>
+                    <h2 class="section-title">Нашите клиенти</h2>
+                    <p class="section-desc">Снимки от реални проекти и доволни клиенти</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="images/drill1.jpeg" alt="Сондажна машина в действие"></div>
+                    <div class="gallery-item"><img src="images/drill2.jpeg" alt="Завършен сондажен проект"></div>
+                    <div class="gallery-item"><img src="images/drill3.jpeg" alt="Сондажна установка на обект"></div>
+                    <div class="gallery-item"><img src="images/drill4.jpeg" alt="Сондажна машина на терен"></div>
+                    <div class="gallery-item"><img src="images/drill5.jpeg" alt="Сондажен проект"></div>
+                    <div class="gallery-item"><img src="images/drill6.jpeg" alt="Сондажна машина"></div>
+                    <div class="gallery-item"><img src="images/drill7.jpeg" alt="Сондажна установка"></div>
+                    <div class="gallery-item"><img src="images/drill9.JPG" alt="Сондажна машина в работа"></div>
+                    <div class="gallery-item"><img src="images/drill10.JPG" alt="Завършен проект"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / CTA Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-info">
+                        <h2>Свържете се с нас</h2>
+                        <p>Имате въпроси или искате оферта? Обадете ни се и ще ви помогнем с удоволствие.</p>
+                        <div class="contact-methods">
+                            <a href="tel:+359888523915" class="contact-method">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Телефон</strong>
+                                    <span>0888 5239 15</span>
+                                </div>
+                            </a>
+                            <a href="tel:+359888523915" class="contact-method">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Международен</strong>
+                                    <span>+359 888 5239 15</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-cta">
+                        <a href="tel:+359888523915" class="btn btn-primary btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            Обади се сега
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025. Тони Транс 2004. Всички права запазени!</p>
-            <p><a href="#">Поверителност</a> | <a href="#">Условия за ползване</a></p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="./" class="footer-logo">Sondi<span>BG</span></a>
+                    <p>Професионални сондажни машини, компресори и консумативи. Над 21 години опит в бранша.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Машини</h4>
+                    <ul>
+                        <li><a href="./hy180">HY-180</a></li>
+                        <li><a href="./hy280">HY-280</a></li>
+                        <li><a href="./profesional">Професионал+</a></li>
+                        <li><a href="./hw60">HW-60 Компресор</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Консумативи</h4>
+                    <ul>
+                        <li><a href="./glavi">Глави</a></li>
+                        <li><a href="./trabi">Тръби</a></li>
+                        <li><a href="./pompi">Помпи</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#about">За нас</a></li>
+                        <li><a href="#gallery">Галерия</a></li>
+                        <li><a href="#contact">Контакт</a></li>
+                        <li><a href="list">Ценоразпис</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Тони Транс 2004 ООД. Всички права запазени.</p>
+                <div class="footer-legal">
+                    <a href="#">Поверителност</a>
+                    <a href="#">Условия за ползване</a>
+                </div>
+            </div>
         </div>
     </footer>
-  <!-- Lightbox Overlay -->
-  <div id="lightbox-overlay" style="display:none;">
-    <span class="lightbox-close">×</span>
-    <img id="lightbox-img" src="" alt="Expanded photo">
-    <div class="lightbox-nav">
-      <span class="lightbox-prev">‹</span>
-      <span class="lightbox-next">›</span>
+
+    <!-- Lightbox -->
+    <div id="lightbox-overlay" class="lightbox" style="display:none;">
+        <button class="lightbox-close" aria-label="Затвори">×</button>
+        <img id="lightbox-img" src="" alt="Увеличена снимка">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" aria-label="Предишна">‹</button>
+            <button class="lightbox-next" aria-label="Следваща">›</button>
+        </div>
     </div>
-  </div>
-  <script src="index.js"></script>
+
+    <script src="index.js"></script>
 </body>
 </html>

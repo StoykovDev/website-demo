@@ -1,110 +1,118 @@
-  (function() {
-    const overlay = document.getElementById('lightbox-overlay');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = overlay.querySelector('.lightbox-close');
-    const prevBtn  = overlay.querySelector('.lightbox-prev');
-    const nextBtn  = overlay.querySelector('.lightbox-next');
+// === Mobile Navigation Toggle ===
+const mobileToggle = document.getElementById('mobileToggle');
+const nav = document.getElementById('nav');
 
-    // Grab all gallery images
-    const galleryImgs = Array.from(
-      document.querySelectorAll('.project-gallery img')
-    );
-    let currentIndex = 0;
-
-    function openLightbox(idx) {
-      currentIndex = idx;
-      lightboxImg.src = galleryImgs[idx].src;
-      overlay.style.display = 'flex';
-    }
-
-    function closeLightbox() {
-      overlay.style.display = 'none';
-    }
-
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
-      lightboxImg.src = galleryImgs[currentIndex].src;
-    }
-
-    function showNext() {
-      currentIndex = (currentIndex + 1) % galleryImgs.length;
-      lightboxImg.src = galleryImgs[currentIndex].src;
-    }
-
-    // Attach handlers
-    galleryImgs.forEach((img, i) => {
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => openLightbox(i));
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
     });
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrev);
-    nextBtn.addEventListener('click', showNext);
+}
 
-    // Close when clicking outside the image
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeLightbox();
+// Close mobile nav when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        mobileToggle.classList.remove('active');
     });
-
-    // Keyboard: ← → Esc
-    document.addEventListener('keydown', e => {
-      if (overlay.style.display !== 'flex') return;
-      if (e.key === 'ArrowLeft')  showPrev();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'Escape')     closeLightbox();
-    });
-  })();
-  const items = document.querySelectorAll('nav ul li');
-items.forEach(li => {
-  let timeout;
-  li.addEventListener('mouseenter', () => {
-    clearTimeout(timeout);
-    li.querySelector('ul').style.display = 'block';
-  });
-  li.addEventListener('mouseleave', () => {
-    timeout = setTimeout(() => {
-      li.querySelector('ul').style.display = 'none';
-    }, 100); // 1 second
-  });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const elems = document.querySelectorAll('.hero .container > *');
-  const timing = {
-    duration: 600,
-    easing: 'ease-out',
-    fill: 'forwards'
-  };
 
-  elems.forEach((el, i) => {
-    // initial state
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(20px)';
-
-    // animate with a staggered delay
-    el.animate([
-      { opacity: 0, transform: 'translateY(20px)' },
-      { opacity: 1, transform: 'translateY(0)' }
-    ], {
-      ...timing,
-      delay: i * 200  // 0ms, 200ms, 400ms…
+// Mobile dropdown toggle
+document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('active');
+        }
     });
-  });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const revealElements = document.querySelectorAll('.scroll-reveal');
 
-  const observer = new IntersectionObserver((entries, observer) => {
+// === Sticky Header Shadow ===
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// === Scroll Reveal Animation ===
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target); // optional: only animate once
-      }
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+        }
     });
-  }, {
-    threshold: 0 // adjust if needed
-  });
+}, observerOptions);
 
-  revealElements.forEach(el => {
+document.querySelectorAll('.scroll-reveal, .feature-card, .product-card, .gallery-item').forEach(el => {
+    el.classList.add('scroll-reveal');
     observer.observe(el);
-  });
 });
 
+// === Lightbox Gallery ===
+const lightbox = document.getElementById('lightbox-overlay');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImages = document.querySelectorAll('.gallery-item img');
+let currentIndex = 0;
+
+galleryImages.forEach((img, index) => {
+    img.parentElement.addEventListener('click', () => {
+        currentIndex = index;
+        openLightbox(img.src);
+    });
+});
+
+function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+    if (currentIndex >= galleryImages.length) currentIndex = 0;
+    lightboxImg.src = galleryImages[currentIndex].src;
+}
+
+// Lightbox event listeners
+document.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+document.querySelector('.lightbox-prev')?.addEventListener('click', () => navigateLightbox(-1));
+document.querySelector('.lightbox-next')?.addEventListener('click', () => navigateLightbox(1));
+
+lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+    }
+});
+
+// === Smooth scroll for anchor links ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
